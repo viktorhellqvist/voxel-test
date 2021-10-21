@@ -15,6 +15,24 @@ include_directories(
 	.
 )
 
+# === Noise visualization ===
+# add the executable
+add_executable(noise
+	noiseVisualization.cpp
+	shaderLoader.cpp
+	shaderLoader.h
+	noise.cpp
+	noise.h
+)
+
+target_link_libraries(noise
+	${OPENGL_LIBRARY}
+	glfw
+	glad
+)
+
+# === Main program ===
+
 # add the executable
 add_executable(main
 	main.cpp
@@ -22,6 +40,12 @@ add_executable(main
 	shaderLoader.h
 	noise.cpp
 	noise.h
+	window.cpp
+	window.h
+	world.cpp
+	world.h
+	controls.cpp
+	controls.h
 )
 
 target_link_libraries(main
